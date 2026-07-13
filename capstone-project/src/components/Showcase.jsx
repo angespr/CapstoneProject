@@ -10,7 +10,7 @@ export default function Showcase({ credits }) {
         <Reveal className="showcase__col showcase__col--left">
           <figure className="poster-frame">
             <img
-              src="public/images/poster.svg"
+              src="src/images/poster.png"
               alt="Capstone research poster: Urgency Meets Obedience"
               className="poster-frame__img"
             />
