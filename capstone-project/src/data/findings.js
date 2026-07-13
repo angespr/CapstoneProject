@@ -11,7 +11,7 @@ export const datapoints = [
     label: "Security Fatigue Datapoint (interviews)",
     value: 90,
     suffix: "%",
-    note: "felt some to no pressure to keep up with security best practices, even when it felt like a burden to keep up with",
+    note: "of women who were interviewed said they felt some to no pressure to keep up with security best practices, even when it felt like a burden to keep up with",
     flag: true,
   },
   {
