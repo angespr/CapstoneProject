@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Reveal from "./Reveal";
 import UrgencyTag from "./UrgencyTag";
 import TypewriterText from "./TypewriterText";
@@ -5,6 +7,7 @@ import "../css/Showcase.css";
 import posterImage from "../images/poster.png";
 
 export default function Showcase({ credits }) {
+  const [isPosterOpen, setIsPosterOpen] = useState(false);
   return (
     <section className="showcase" id="poster">
       <div className="showcase__grid">
@@ -14,6 +17,7 @@ export default function Showcase({ credits }) {
             src={posterImage}
             alt="Capstone research poster: Urgency Meets Obedience"
             className="poster-frame__img"
+            onClick={() => setIsPosterOpen(true)}
           />
           </figure>
 
@@ -51,6 +55,23 @@ export default function Showcase({ credits }) {
           </div>
         </Reveal>
       </div>
+        {isPosterOpen && (
+        <div className="poster-lightbox" onClick={() => setIsPosterOpen(false)}>
+          <img
+            src={posterImage}
+            alt="Expanded capstone research poster"
+            className="poster-lightbox__img"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <button
+            className="poster-lightbox__close"
+            onClick={() => setIsPosterOpen(false)}
+          >
+            ✕
+          </button>
+        </div>
+      )}
     </section>
   );
 }

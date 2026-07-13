@@ -162,3 +162,49 @@
     min-height: 360px;
   }
 }
+
+.poster-frame__img {
+  cursor: zoom-in;
+}
+
+.poster-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.75);
+  overflow: auto;
+}
+
+
+.poster-lightbox__img {
+  width: auto;
+  height: auto;
+  max-width: 80vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  cursor: default;
+}
+
+
+.poster-lightbox__close {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
