@@ -1,0 +1,95 @@
+.title {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-5) var(--space-2) var(--space-6);
+  background:
+    radial-gradient(120% 90% at 15% 0%, var(--color-primary-soft) 0%, transparent 55%),
+    radial-gradient(120% 90% at 85% 10%, var(--color-periwinkle) 0%, transparent 50%),
+    var(--color-paper);
+  overflow: hidden;
+}
+
+.title__inner {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.title__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 7vw, 7.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: var(--space-2) 0 0;
+  color: var(--color-ink);
+}
+
+.title__title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-primary-strong);
+}
+
+.title__subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+  max-width: 42ch;
+  margin: 0;
+}
+
+.title__meta {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-2);
+  max-width: 46ch;
+}
+
+.title__scroll-cue {
+  position: absolute;
+  bottom: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 34px;
+  border: 2px solid var(--color-ink-soft);
+  border-radius: 999px;
+  opacity: 0.55;
+}
+
+.title__scroll-cue span {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-ink-soft);
+  animation: scroll-cue 1.6s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  0% { opacity: 1; top: 6px; }
+  70% { opacity: 0; top: 16px; }
+  100% { opacity: 0; top: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title__scroll-cue span { animation: none; }
+}
+
+@media (max-width: 640px) {
+  .title { min-height: 64vh; padding: var(--space-4) var(--space-2) var(--space-5); }
+}

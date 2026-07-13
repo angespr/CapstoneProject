@@ -1,0 +1,49 @@
+.stat-card {
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-2);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px -20px rgba(62, 26, 41, 0.4);
+}
+
+.stat-card--flagged {
+  border-color: var(--color-primary);
+  background: linear-gradient(180deg, var(--color-primary-soft), var(--color-paper-raised) 55%);
+}
+
+.stat-card__value {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: var(--space-1) 0 0;
+  line-height: 1;
+}
+
+.stat-card__suffix {
+  font-size: 0.5em;
+  margin-left: 2px;
+  color: var(--color-primary-strong);
+}
+
+.stat-card__label {
+  font-weight: 600;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.stat-card__note {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}

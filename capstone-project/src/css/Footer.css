@@ -1,0 +1,16 @@
+.site-footer {
+  text-align: center;
+  padding: var(--space-3) var(--space-2) var(--space-4);
+  color: var(--color-ink-soft);
+  font-size: 0.85rem;
+  background: var(--color-paper);
+}
+
+.site-footer p {
+  margin: 0.2rem 0;
+}
+
+.site-footer__note {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}

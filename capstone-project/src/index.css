@@ -1,0 +1,94 @@
+/* 
+Color Pallete Notes -
+  #df98ab  primary 
+  #d4e2cf  secondary 
+  #c5d2f4  secondary 
+  #3e1a29  ink (text)
+*/
+:root {
+  /* COLOR */
+  --color-primary: #df98ab;
+  --color-primary-strong: #b96a80; /* darker rose, derived for hover/contrast */
+  --color-primary-soft: #f3d9e0;   /* pale rose wash, derived for backgrounds */
+  --color-primary-bright: #fcb3c6;   /* bright rose for secondary graph */
+  --color-mint: #d4e2cf;
+  --color-mint-strong: #9db594;    /* derived deeper mint for chart strokes */
+  --color-periwinkle: #c5d2f4;
+  --color-periwinkle-strong: #8fa3e0; /* derived deeper periwinkle for chart strokes */
+  --color-periwinkle-dark: #7f97c7; /* derived darker periwinkle for secondary graph */
+  --color-ink: #3e1a29;
+  --color-ink-soft: #6b4353;       /* derived, lighter ink for secondary text */
+  --color-paper: #fdf8f6;          /* warm near-white, derived to sit with rose */
+  --color-paper-raised: #ffffff;
+  --color-line: rgba(62, 26, 41, 0.14);
+
+  /* TYPOGRAPHY */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "IBM Plex Sans", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+
+  /* SCALING */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6.5rem;
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+#root {
+  min-height: 100vh;
+}
