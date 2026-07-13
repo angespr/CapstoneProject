@@ -2,6 +2,7 @@ import Reveal from "./Reveal";
 import UrgencyTag from "./UrgencyTag";
 import TypewriterText from "./TypewriterText";
 import "../css/Showcase.css";
+import posterImage from "../images/poster.png";
 
 export default function Showcase({ credits }) {
   return (
@@ -10,10 +11,10 @@ export default function Showcase({ credits }) {
         <Reveal className="showcase__col showcase__col--left">
           <figure className="poster-frame">
             <img
-              src="src/images/poster.png"
-              alt="Capstone research poster: Urgency Meets Obedience"
-              className="poster-frame__img"
-            />
+            src={posterImage}
+            alt="Capstone research poster: Urgency Meets Obedience"
+            className="poster-frame__img"
+          />
           </figure>
 
           <div className="credits-card">
