@@ -90,6 +90,22 @@
   .title__scroll-cue span { animation: none; }
 }
 
-@media (max-width: 640px) {
-  .title { min-height: 64vh; padding: var(--space-4) var(--space-2) var(--space-5); }
+@media (max-width:768px){
+  .title{
+    min-height:70vh;
+    padding: var(--space-4) var(--space-2);
+  }
+  .title__title{
+    font-size:2.6rem;
+    line-height:1.1;
+  }
+  .title__subtitle{
+    font-size:1rem;
+    max-width:100%;
+  }
+  .title__meta{
+    font-size:.72rem;
+    max-width:100%;
+  }
+
 }
