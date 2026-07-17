@@ -127,7 +127,7 @@ useEffect(() => {
               top: 10, 
               right: 25, 
               left: -25, 
-              bottom: isMobile ? 25 : 90
+              bottom: isMobile ? 32 : 90
             }}>
               <CartesianGrid stroke="var(--color-line)" vertical={false} />
               <XAxis
