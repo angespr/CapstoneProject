@@ -45,7 +45,7 @@ export const genderPerceptionData = [
   },
   { 
     condition: "My gender identity makes me feel that a data breach can feel like a physical safety concern, not just a privacy or financial concern", 
-    tooltip: "Physical Safety Concern", 
+    tooltip: "Physical Safety Concerns", 
     women: 3.4, 
     men: 2.59 
   },
@@ -57,7 +57,7 @@ export const genderPerceptionData = [
   },
   { 
     condition: "I feel that women are expected to be more compliant with rules and guidelines", 
-    tooltip: "Gendered Compliance Expectations",
+    tooltip: "Women are Often Subject to Compliance Expectations",
     women: 3.72, 
     men: 2.98 
   },
@@ -67,37 +67,37 @@ export const genderPerceptionData = [
 export const genderConfidenceData = [
   { 
     cue: "My friends and/or peers influence my online security habits", 
-    tooltip: "Peer influence", 
+    tooltip: "Influenced by Peers", 
     women: 3.04, 
     men: 3.41 
   },
   { 
     cue: "I feel unsure about my ability to evaluate scary-looking security prompts", 
-    tooltip: "System Alert",
+    tooltip: "Unsure of Abilities to Evaluate Security Prompts",
     women: 3.12, 
     men: 2.7 
   },
   { 
     cue: "Even when I feel suspicious, I may hesitate to challenge a request because I do not want to seem difficult", 
-    tooltip: "Social Obligation Framing",
+    tooltip: "Hesitation to Challenge a Scam",
     women: 4.23, 
     men: 3.8 
   },
   { 
-    cue: "I feel the chances of a cyberattack targeting my personal accounts or devices are high", 
-    tooltip: "Targeted cyberattack chances",
-    women: 2.82, 
-    men: 3.21
+    cue: "Because of my online identity's vulnerability, it makes me distrustful of urgent “system” messages.", 
+    tooltip: "Distrustful of Urgent System Messages",
+    women: 3.84, 
+    men: 3.44
   },
   { 
     cue: "I feel comfortable investigating suspicious messages or alerts, even when they make me feel uneasy", 
-    tooltip: "Comfort with investigating suspicious messages",
+    tooltip: "Comfort with Investigating Suspicious Messages",
     women: 3.41, 
     men: 3.72 
   },
   { 
     cue: "When I am unsure about a security issue, I... Ask a friend, family member, or coworker", 
-    tooltip: "Ask a friend, family member, or coworker",
+    tooltip: "Ask a Friend, Family Member, or Coworker",
     women: 3.74, 
     men: 3.29 
   },
