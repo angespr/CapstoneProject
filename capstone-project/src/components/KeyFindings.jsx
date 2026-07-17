@@ -36,7 +36,7 @@ function ChartTooltip({ active, payload, label }) {
             className="chart-tooltip__swatch"
             style={{ background: entry.color }}
           />
-          {entry.name} Mean = {entry.value.toFixed(2)}
+          {entry.name} = {entry.value.toFixed(2)}
         </p>
       ))}
     </div>
