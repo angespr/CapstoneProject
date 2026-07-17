@@ -27,13 +27,13 @@ function ChartTooltip({ active, payload, label }) {
   if (!active || !payload?.length) return null;
   return (
     <div className="chart-tooltip">
-      <p className="chart-tooltip__label">
+      <p className="chart-tooltip_label">
         {payload[0].payload.tooltip}
       </p>
       {payload.map((entry) => (
-        <p key={entry.dataKey} className="chart-tooltip__row">
+        <p key={entry.dataKey} className="chart-tooltip_row">
           <span
-            className="chart-tooltip__swatch"
+            className="chart-tooltip_swatch"
             style={{ background: entry.color }}
           />
           {entry.name} = {entry.value.toFixed(2)}
@@ -98,17 +98,17 @@ useEffect(() => {
 
   return (
     <section className="findings" id="findings">
-      <div className="findings__inner">
-        <Reveal className="findings__heading">
+      <div className="findings_inner">
+        <Reveal className="findings_heading">
           <UrgencyTag tone="primary">Findings</UrgencyTag>
           <h2>What the data showed</h2>
-          <p className="findings__intro">
+          <p className="findings_intro">
             Figures below are pulled directly from the study dataset.
           </p>
         </Reveal>
 
         {/* Data Stat Cards */}
-        <div className="findings__stats">
+        <div className="findings_stats">
           {datapoints.map((s, i) => (
             <Reveal key={s.label} delay={i * 90}>
               <StatCard {...s} />
@@ -118,7 +118,7 @@ useEffect(() => {
 
         {/* Grouped bar chart */}
         <Reveal className="chart-card">
-          <div className="chart-card__head">
+          <div className="chart-card_head">
             <h3>Cybersecurity PERCEPTIONS by Gender</h3>
             <p>The data is presented as the average agreement level of participants with each statement regarding their gender identity and online safety concerns.</p>
           </div>
@@ -177,7 +177,7 @@ useEffect(() => {
 
         {/* Grouped bar chart */}
         <Reveal className="chart-card">
-          <div className="chart-card__head">
+          <div className="chart-card_head">
             <h3>Cybersecurity CONFIDENCE by Gender</h3>
             <p>The data is presented as the average agreement level of participants with each statement regarding their gender identity and online safety practices.</p>
           </div>
@@ -235,11 +235,11 @@ useEffect(() => {
         </Reveal>
 
         {/* Pull quotes */}
-        <div className="findings__quotes">
+        <div className="findings_quotes">
           {pullQuotes.map((q, i) => (
             <Reveal key={q.source} delay={i * 100} className="quote-card">
-              <p className="quote-card__text">&ldquo;{q.quote}&rdquo;</p>
-              <p className="quote-card__source">{q.source}</p>
+              <p className="quote-card_text">&ldquo;{q.quote}&rdquo;</p>
+              <p className="quote-card_source">{q.source}</p>
             </Reveal>
           ))}
         </div>

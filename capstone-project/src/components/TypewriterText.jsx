@@ -50,7 +50,7 @@ export default function TypewriterText({
   return (
     <span className="typewriter">
       {display}
-      <span className="typewriter__cursor" aria-hidden="true">|</span>
+      <span className="typewriter_cursor" aria-hidden="true">|</span>
     </span>
   );
 }

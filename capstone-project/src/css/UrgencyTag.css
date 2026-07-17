@@ -28,7 +28,7 @@
   background: rgba(253, 248, 246, 0.12);
 }
 
-.urgency-tag__dot {
+.urgency-tag_dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -43,7 +43,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .urgency-tag__dot { animation: none; }
+  .urgency-tag_dot { animation: none; }
 }
 
 @media (max-width:768px){

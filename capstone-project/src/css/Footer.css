@@ -10,7 +10,7 @@
   margin: 0.2rem 0;
 }
 
-.site-footer__note {
+.site-footer_note {
   font-family: var(--font-mono);
   font-size: 0.75rem;
 }

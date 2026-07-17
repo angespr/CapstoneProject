@@ -20,7 +20,7 @@
   background: linear-gradient(180deg, var(--color-primary-soft), var(--color-paper-raised) 55%);
 }
 
-.stat-card__value {
+.stat-card_value {
   font-family: var(--font-mono);
   font-size: clamp(2rem, 4vw, 2.6rem);
   font-weight: 600;
@@ -29,19 +29,19 @@
   line-height: 1;
 }
 
-.stat-card__suffix {
+.stat-card_suffix {
   font-size: 0.5em;
   margin-left: 2px;
   color: var(--color-primary-strong);
 }
 
-.stat-card__label {
+.stat-card_label {
   font-weight: 600;
   margin: 0;
   font-size: 0.95rem;
 }
 
-.stat-card__note {
+.stat-card_note {
   margin: 0;
   color: var(--color-ink-soft);
   font-size: 0.85rem;
@@ -52,13 +52,13 @@
   .stat-card{
     padding: var(--space-2);
   }
-  .stat-card__value{
+  .stat-card_value{
     font-size:1.8rem;
   }
-  .stat-card__label{
+  .stat-card_label{
     font-size:.9rem;
   }
-  .stat-card__note{
+  .stat-card_note{
     font-size:.8rem;
   }
 
