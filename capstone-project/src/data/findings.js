@@ -1,21 +1,21 @@
 // Main highlights
 export const datapoints = [
   {
-    label: "Technical Responsibility Datapoint (interviews)",
+    label: "Technical Responsibility",
     value: 70,
     suffix: "%",
     note: "of women who were interviewed said they felt SOME TO ALL RESPONSIBILITY in protecting parents, grandparents, and little siblings or cousins",
     flag: true,
   },
   {
-    label: "Security Fatigue Datapoint (interviews)",
+    label: "Security Fatigue",
     value: 90,
     suffix: "%",
     note: "of women who were interviewed said they felt some to no pressure to keep up with security best practices, even when it felt like a burden to keep up with",
     flag: true,
   },
   {
-    label: "Jolt of Anxiety Datapoint (interviews)",
+    label: "Jolt of Anxiety",
     value: 85,
     suffix: "%",
     note: "of women who were interviewed said they have experienced a situation where they felt a strong sense of anxiety or fear",
@@ -39,7 +39,7 @@ export const genderPerceptionData = [
     men: 2.81 
   },
   { condition: "My gender identity makes me worry that a data breach could lead to doxing, harassment, stalking, or unwanted contact",
-    tooltip: "Doxing / Harassment Concern",
+    tooltip: "Doxing & Harassment Concerns",
     women: 3.45, 
     men: 2.62 
   },
@@ -73,13 +73,13 @@ export const genderConfidenceData = [
   },
   { 
     cue: "I feel unsure about my ability to evaluate scary-looking security prompts", 
-    tooltip: "Scary system alert",
+    tooltip: "System Alert",
     women: 3.12, 
     men: 2.7 
   },
   { 
     cue: "Even when I feel suspicious, I may hesitate to challenge a request because I do not want to seem difficult", 
-    tooltip: "Social-obligation framing",
+    tooltip: "Social Obligation Framing",
     women: 4.23, 
     men: 3.8 
   },
@@ -96,7 +96,7 @@ export const genderConfidenceData = [
     men: 3.72 
   },
   { 
-    cue: "When I am unsure about a security issue, I... - Ask a friend, family member, or coworker", 
+    cue: "When I am unsure about a security issue, I... Ask a friend, family member, or coworker", 
     tooltip: "Ask a friend, family member, or coworker",
     women: 3.74, 
     men: 3.29 

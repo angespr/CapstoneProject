@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Reveal from "./Reveal";
 import UrgencyTag from "./UrgencyTag";
 import StatCard from "./StatCard";
@@ -42,7 +43,7 @@ function ChartTooltip({ active, payload, label }) {
   );
 }
 
-function CustomXAxisTick({ x, y, payload }) {
+function CustomXAxisTick({ x, y, payload, fontSize }) {
   const words = payload.value.split(" ");
   const lines = [];
   let current = "";
@@ -65,7 +66,7 @@ function CustomXAxisTick({ x, y, payload }) {
       <text
         textAnchor="middle"
         fill="var(--color-ink-soft)"
-        fontSize={12}
+        fontSize={fontSize}
       >
         {lines.map((line, index) => (
           <tspan
@@ -82,6 +83,18 @@ function CustomXAxisTick({ x, y, payload }) {
 }
 
 export default function KeyFindings() {
+
+const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
   return (
     <section className="findings" id="findings">
       <div className="findings__inner">
@@ -109,11 +122,16 @@ export default function KeyFindings() {
             <p>The data is presented as the average agreement level of participants with each statement regarding their gender identity and online safety concerns.</p>
           </div>
           <ResponsiveContainer width="100%" height={340}>
-            <BarChart data={genderPerceptionData} margin={{ top: 10, right: 25, left: -25, bottom: 50 }}>
+            <BarChart data={genderPerceptionData} margin={{ 
+              top: 10, 
+              right: 25, 
+              left: -25, 
+              bottom: 50 
+            }}>
               <CartesianGrid stroke="var(--color-line)" vertical={false} />
               <XAxis
-                dataKey="condition"
-                tick={<CustomXAxisTick />}
+                dataKey={isMobile ? "tooltip" : "condition"}
+                tick={<CustomXAxisTick fontSize={isMobile ? 7 : 12} />}
                 tickLine={false}
                 axisLine={{ stroke: "var(--color-line)" }}
                 interval={0}
@@ -163,11 +181,16 @@ export default function KeyFindings() {
             <p>The data is presented as the average agreement level of participants with each statement regarding their gender identity and online safety practices.</p>
           </div>
           <ResponsiveContainer width="100%" height={340}>
-            <BarChart data={genderConfidenceData} margin={{ top: 10, right: 25, left: -25, bottom: 80 }}>
+            <BarChart data={genderConfidenceData} margin={{ 
+              top: 10, 
+              right: 25, 
+              left: -25, 
+              bottom: 80 
+            }}>
               <CartesianGrid stroke="var(--color-line)" vertical={false} />
               <XAxis
-                dataKey="cue"
-                tick={<CustomXAxisTick />}
+                dataKey={isMobile ? "tooltip" : "cue"}
+                tick={<CustomXAxisTick fontSize={isMobile ? 7 : 12} />}
                 tickLine={false}
                 axisLine={{ stroke: "var(--color-line)" }}
                 interval={0}
