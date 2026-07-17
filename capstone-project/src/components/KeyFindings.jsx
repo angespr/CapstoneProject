@@ -48,7 +48,8 @@ function CustomXAxisTick({ x, y, payload, fontSize }) {
   const lines = [];
   let current = "";
 
-  const maxChars = 18; 
+  // Smaller labels on mobile need fewer chars per line
+  const maxChars = fontSize <= 8 ? 12 : 18;
 
   words.forEach((word) => {
     if ((current + " " + word).trim().length <= maxChars) {
@@ -71,8 +72,8 @@ function CustomXAxisTick({ x, y, payload, fontSize }) {
         {lines.map((line, index) => (
           <tspan
             key={index}
-            x={0}
-            dy={index === 0 ? 16 : 14}
+            x="0"
+            dy={index === 0 ? 7 : 14}
           >
             {line}
           </tspan>
@@ -126,7 +127,7 @@ useEffect(() => {
               top: 10, 
               right: 25, 
               left: -25, 
-              bottom: 50 
+              bottom: isMobile ? 25 : 90
             }}>
               <CartesianGrid stroke="var(--color-line)" vertical={false} />
               <XAxis
@@ -185,7 +186,7 @@ useEffect(() => {
               top: 10, 
               right: 25, 
               left: -25, 
-              bottom: 80 
+              bottom: isMobile ? 45 : 80
             }}>
               <CartesianGrid stroke="var(--color-line)" vertical={false} />
               <XAxis
