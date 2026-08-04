@@ -66,6 +66,37 @@
   color: var(--color-ink-soft);
 }
 
+.methodology_section {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.methodology_section .about_subheading {
+  text-align: center;
+}
+
+.methodology_section .about_paragraph {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.about_divider {
+  width: 100%;
+  border: none;
+  border-top: 2px solid rgba(26, 1, 9, 0.12);
+  margin: 1.5rem 0;
+}
+
+.about_bottom {
+  align-self: center;
+  max-width: 900px;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-ink-soft);
+}
+
 @media (max-width: 900px) {
   .about_inner {
     grid-template-columns: 1fr;
