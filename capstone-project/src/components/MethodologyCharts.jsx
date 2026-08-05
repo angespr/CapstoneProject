@@ -131,7 +131,7 @@ export default function MethodologyCharts() {
   return (
     <div className="methodology_charts">
       {/* Gender Pie Chart */}
-      <Reveal className="chart-card">
+      <Reveal className="methodology_chart-card">
         <h3>Gender Distribution</h3>
         <ResponsiveContainer width={320} height={280}>
           <PieChart
@@ -164,7 +164,7 @@ export default function MethodologyCharts() {
       </Reveal>
 
       {/* Age Horizontal Bar Chart */}
-      <Reveal className="chart-card">
+      <Reveal className="methodology_chart-card">
         <h3>Age Distribution</h3>
         <ResponsiveContainer width={"100%"} height={250}>
           <BarChart
@@ -193,7 +193,7 @@ export default function MethodologyCharts() {
       </Reveal>
 
       {/* Education Donut Chart */}
-      <Reveal className="chart-card">
+      <Reveal className="methodology_chart-card">
         <h3>Educational Background</h3>
         <ResponsiveContainer width={390} height={320}>
           <PieChart

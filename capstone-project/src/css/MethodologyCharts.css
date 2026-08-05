@@ -8,13 +8,13 @@
   margin-top: 2rem;
 }
 
-.chart-card {
+.methodology_chart-card {
   background: white;
   padding: 1.25rem;
   border-radius: 20px;
   width: 100%;
   max-width: 420px;
-    justify-content: center;
+  justify-content: center;
   justify-items: center;
 }
 
