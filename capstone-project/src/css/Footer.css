@@ -1,9 +1,9 @@
 .site-footer {
   text-align: center;
   padding: var(--space-3) var(--space-2) var(--space-4);
-  color: var(--color-ink-soft);
+  color: var(--color-paper);
   font-size: 0.85rem;
-  background: var(--color-paper);
+  background: var(--color-ink);
 }
 
 .site-footer p {

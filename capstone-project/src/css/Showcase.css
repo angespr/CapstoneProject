@@ -11,6 +11,28 @@
   align-items: stretch;
 }
 
+.showcase_header {
+  max-width: 900px;
+  margin-bottom: var(--space-4);
+}
+
+.showcase_heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.12;
+  margin: var(--space-1) 0 var(--space-1);
+  color: var(--color-ink);
+}
+
+.showcase_subheading {
+  max-width: 90ch;
+  margin: 20px 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
 .showcase_col {
   display: flex;
   flex-direction: column;

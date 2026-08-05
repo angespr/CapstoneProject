@@ -1,6 +1,6 @@
 export const about = {
   eyebrow: "About the research",
-  heading: "Why does identity & gender matter in security?",
+  heading: "Why Does Identity & Gender Matter in Cybersecurity?",
 
   left: [
     {

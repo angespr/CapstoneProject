@@ -101,7 +101,7 @@ useEffect(() => {
       <div className="findings_inner">
         <Reveal className="findings_heading">
           <UrgencyTag tone="primary">Findings</UrgencyTag>
-          <h2>What the data showed</h2>
+          <h2>Insights from the Data</h2>
           <p className="findings_intro">
             Figures below are pulled directly from the study dataset.
           </p>

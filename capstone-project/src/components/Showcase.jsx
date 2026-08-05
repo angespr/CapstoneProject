@@ -10,6 +10,18 @@ export default function Showcase({ credits }) {
   const [isPosterOpen, setIsPosterOpen] = useState(false);
   return (
     <section className="showcase" id="poster">
+      <Reveal className="showcase_header">
+        <UrgencyTag tone="primary">Showcase</UrgencyTag>
+
+        <h2 className="showcase_heading">
+          Research Poster & Publication
+        </h2>
+
+        <p className="showcase_subheading">
+          Explore the completed capstone poster and follow the progress of the
+          upcoming research paper publication.
+        </p>
+      </Reveal>
       <div className="showcase_grid">
         <Reveal className="showcase_col showcase_col--left">
           <figure className="poster-frame">
