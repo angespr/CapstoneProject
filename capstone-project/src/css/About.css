@@ -46,8 +46,8 @@
 }
 
 .about_subheading {
-  margin: 0.0rem 0 0.75rem;
-  font-size: 1.15rem;
+  margin: 0.7rem 0 0.75rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--color-ink);
 }
@@ -68,17 +68,55 @@
 
 .methodology_section {
   width: 100%;
-  margin-top: 3rem;
 }
 
-.methodology_section .about_subheading {
+.methodology_section > .about_subheading {
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .methodology_section .about_paragraph {
   max-width: 900px;
   margin: 0 auto 2rem;
   text-align: center;
+}
+
+.methodology_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.methodology_column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.methodology_block {
+  width: 100%;
+}
+
+.methodology_text {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink-soft);
+}
+
+.methodology_purpose {
+  margin: 1rem 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink-soft);
+}
+
+.methodology_title {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-ink);
 }
 
 .about_divider {
@@ -95,6 +133,57 @@
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--color-ink-soft);
+}
+
+.research_question {
+  margin-top: 1.2rem;
+  padding: 1.75rem;
+  background-color: var(--color-primary);
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.research_question_title {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+.research_question_text {
+  margin: 0;
+  font-size: 1.0rem;
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.impact_card {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: var(--color-mint);
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.impact_title {
+  margin: 0 0 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.impact_text {
+  margin: 0 auto;
+  max-width: 100%;;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink);
 }
 
 @media (max-width: 900px) {

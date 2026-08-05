@@ -47,9 +47,7 @@ function wrapText(text, maxChars = 6) {
   let currentLine = "";
 
   words.forEach((word) => {
-    const testLine = currentLine
-      ? `${currentLine} ${word}`
-      : word;
+    const testLine = currentLine ? `${currentLine} ${word}` : word;
 
     if (testLine.length <= maxChars) {
       currentLine = testLine;
@@ -66,16 +64,13 @@ function wrapText(text, maxChars = 6) {
 
 function renderLabel({ cx, cy, midAngle, outerRadius, name }) {
   const RADIAN = Math.PI / 180;
-
   const radius = outerRadius + 15;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-const x = cx + radius * Math.cos(-midAngle * RADIAN);
-const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-// Distance away from the connector line from graph to label
-const labelOffset = 12;
-const labelX = x > cx ? x + labelOffset : x - labelOffset;
-
+  // Distance away from the connector line from graph to label
+  const labelOffset = 12;
+  const labelX = x > cx ? x + labelOffset : x - labelOffset;
   const lines = wrapText(name);
 
   return (
@@ -88,11 +83,7 @@ const labelX = x > cx ? x + labelOffset : x - labelOffset;
       fontSize={12}
     >
       {lines.map((line, index) => (
-        <tspan
-          key={index}
-          x={labelX}
-          dy={index === 0 ? 0 : "1.15em"}
-        >
+        <tspan key={index} x={labelX} dy={index === 0 ? 0 : "1.3em"}>
           {line}
         </tspan>
       ))}
@@ -100,6 +91,16 @@ const labelX = x > cx ? x + labelOffset : x - labelOffset;
   );
 }
 
+function renderEducationLabel(props) {
+  const { value } = props;
+  // Hide labels for very small categories
+  if (value < 15) {
+    return null;
+  }
+  return renderLabel(props);
+}
+
+// Percentage Tool tip (gender)
 function CustomTooltip({ active, payload }) {
   if (active && payload && payload.length) {
     return (
@@ -109,30 +110,44 @@ function CustomTooltip({ active, payload }) {
       </div>
     );
   }
+  return null;
+}
 
+// Number tooltip (age and education)
+function CountTooltip({ active, payload }) {
+  if (active && payload && payload.length) {
+    return (
+      <div className="chart_tooltip">
+        <p>{payload[0].name}</p>
+        <strong>{payload[0].value}</strong>
+      </div>
+    );
+  }
   return null;
 }
 
 export default function MethodologyCharts() {
-    const isMobile = useIsMobile();
-
+  const isMobile = useIsMobile();
   return (
     <div className="methodology_charts">
-
       {/* Gender Pie Chart */}
       <Reveal className="chart-card">
         <h3>Gender Distribution</h3>
-        <ResponsiveContainer width="100%" height={280}>
-          <PieChart>
+        <ResponsiveContainer width={320} height={280}>
+          <PieChart
+            margin={{
+              top: 20,
+            }}
+          >
             <Pie
-                data={methodologyData.gender}
-                dataKey="value"
-                nameKey="name"
-                cx="50%"
-                cy="50%"
-                outerRadius={90}
-                label={renderLabel}
-                >
+              data={methodologyData.gender}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              outerRadius={90}
+              label={renderLabel}
+            >
               {methodologyData.gender.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
@@ -148,29 +163,28 @@ export default function MethodologyCharts() {
       {/* Age Horizontal Bar Chart */}
       <Reveal className="chart-card">
         <h3>Age Distribution</h3>
-        <ResponsiveContainer width="100%" height={250}>
+        <ResponsiveContainer width={"100%"} height={250}>
           <BarChart
             data={methodologyData.age}
             layout="vertical"
             margin={{
-              left: 20,
+              top: 20,
+              left: 5,
+              right: 5,
             }}
           >
             <CartesianGrid horizontal={false} />
-            <XAxis
-              type="number"
-            />
-            <YAxis
-              dataKey="name"
-              type="category"
-              width={60}
-            />
+            <XAxis type="number" />
+            <YAxis dataKey="name" type="category" width={60} />
             <Tooltip />
-            <Bar
-              dataKey="value"
-              fill="var(--color-primary)"
-              radius={[0, 6, 6, 0]}
-            />
+            <Bar dataKey="value" radius={[0, 6, 6, 0]}>
+              {methodologyData.age.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Bar>
           </BarChart>
         </ResponsiveContainer>
       </Reveal>
@@ -178,26 +192,26 @@ export default function MethodologyCharts() {
       {/* Education Donut Chart */}
       <Reveal className="chart-card">
         <h3>Educational Background</h3>
-        <ResponsiveContainer width="100%" height={320}>
+        <ResponsiveContainer width={390} height={320}>
           <PieChart
             margin={{
-                top: 20,
-                right: 60,
-                bottom: 20,
-                left: 60,
+              top: 20,
+              right: 60,
+              bottom: 50,
+              left: 60,
             }}
-            >
+          >
             <Pie
-                data={methodologyData.education}
-                dataKey="value"
-                nameKey="name"
-                cx="50%"
-                cy="50%"
-                innerRadius={50}
-                outerRadius={90}
-                paddingAngle={3}
-                label={renderLabel}
-                >
+              data={methodologyData.education}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              innerRadius={50}
+              outerRadius={90}
+              paddingAngle={3}
+              label={renderEducationLabel}
+            >
               {methodologyData.education.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
@@ -205,7 +219,7 @@ export default function MethodologyCharts() {
                 />
               ))}
             </Pie>
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip content={<CountTooltip />} />
           </PieChart>
         </ResponsiveContainer>
       </Reveal>

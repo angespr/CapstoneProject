@@ -16,39 +16,59 @@ export const methodologyData = {
 
   age: [
     {
-      name: "18-24",
-      value: 62,
+      name: "20-29",
+      value: 72,
     },
     {
-      name: "25-34",
-      value: 25,
+      name: "30-39",
+      value: 115,
     },
     {
-      name: "35-44",
-      value: 8,
+      name: "40-49",
+      value: 83,
     },
     {
-      name: "45+",
-      value: 5,
+      name: "50-59",
+      value: 46,
+    },
+    {
+      name: "60+",
+      value: 36,
     },
   ],
 
   education: [
     {
       name: "High School",
-      value: 12,
+      value: 1,
+    },
+    {
+      name: "GED (or Equivalent)",
+      value: 15,
+    },
+    {
+      name: "Some College",
+      value: 26,
     },
     {
       name: "Associate Degree",
-      value: 18,
+      value: 20,
     },
     {
       name: "Bachelor's Degree",
-      value: 55,
+      value: 201,
     },
     {
-      name: "Graduate Degree",
-      value: 15,
+      name: "Master's Degree",
+      value: 84,
+    },
+    {
+      name: "Law Degree, M.B.A. or Professional Degree",
+      value: 4,
+    },
+    {
+      name: "Doctorate Degree (PhD)",
+      value: 1,
     },
   ],
 };

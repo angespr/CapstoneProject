@@ -25,38 +25,35 @@ export const about = {
         "Protection Motivation Theory (PMT): Perceptions of threat severity, vulnerability, response efficacy, and self-efficacy can influence whether individuals engage in protective cybersecurity behaviors.",
       ],
     },
-  ],
+  ],       
 
   research: {
-    heading: "Research Challenges",
-    paragraph:
-      "Traditional cybersecurity research often focuses on technical behaviors while overlooking how identity, social expectations, and lived experiences influence security decisions.",
-
+    
     question:
-      "How do identity and social expectations influence cybersecurity decision-making, particularly among women navigating personal safety, privacy, and trust?",
+      "How do gendered constructs of personal, social, and collective identity influence women’s psychological and behavioral responses to fear-based urgency cues in cybersecurity, particularly regarding immediate compliance?",
   },
 
-methodology: {
-  heading: "Methodology",
+  methodology: {
+    heading: "Methodology",
 
-  paragraph:
-    "This research used a mixed-methods approach combining quantitative survey data and qualitative interviews to understand both cybersecurity behaviors and the experiences behind those decisions.",
+    paragraph:
+      "This research used a mixed-methods approach combining quantitative survey data and qualitative interviews to understand both cybersecurity behaviors and the experiences behind those decisions.",
 
-  collection: {
-    heading: "How Data Was Collected",
-    details: [
-      "Qualitative, semi-structured interviews were conducted with women-identifying participants only.",
-      "A quantitative survey was distributed to participants across multiple gender identities and age groups.",
-    ],
-  },
+    collection: {
+      heading: "How Data Was Collected",
+      details: [
+        "Qualitative: A semi-structured interviews were conducted with female-identifying participants only.",
+        "Quantitative: A survey was distributed to participants across multiple gender identities and age groups.",
+      ],
+    },
 
     interviews: {
       heading: "Interview Data",
       paragraph:
-        "Interviews explored the experiences and decision-making processes behind cybersecurity behaviors, providing context beyond survey responses.",
+        "Interviews explored the experiences and decision-making processes behind cybersecurity behaviors, providing context beyond survey responsesL",
 
       details: [
-        "20 women-identifying UWB students participated",
+        "20 female-identifying UWB students participated",
         "Participants represented diverse majors and backgrounds",
         "Questions explored privacy and safety, trust, cybersecurity scenarios, past experiences, social expectations, and advice for others",
       ],
@@ -68,22 +65,20 @@ methodology: {
     tools: {
       heading: "Tools Used",
       list: [
-        "Qualtrics",
-        "Amazon Mechanical Turk (MTurk)",
-        "Microsoft Excel",
-        "Sony MP3 Recorder",
-        "Google Scholar",
-        "Google Docs",
-        "Overleaf",
+        "Qualtrics: Survey Hosting & Data Collection",
+        "Amazon Mechanical Turk: Gathering Survey Participants",
+        "Microsoft Excel: Storing, Calculating, and Visualizing Survey Data",
+        "Sony MP3 Recorder: Recording Voice-Only Audio for Interviews",
+        "Google Scholar: Finding References, Resources, and Acknowledgements",
       ],
     },
   },
 
   bottom: [
     {
-      heading: "Research Impact",
+      heading: "Research Impact & Motivation",
       paragraph:
-        "Understanding the relationship between identity and cybersecurity behavior can help create more inclusive security practices that consider human experiences alongside technical protections.",
+        "Women remain underrepresented in research and the overall computer science/cybersecurity spaces. Lived experiences with stalking, harassment, doxing, and identity theft provide important insight into cybersecurity awareness, risk perception, and online safety behaviors. It also makes women more cognizant of their own vulnerabilities, risk aversion, and the value of anonymity.",
     },
   ],
 };
