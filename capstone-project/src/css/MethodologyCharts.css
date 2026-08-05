@@ -1,8 +1,9 @@
 .methodology_charts {
   display: grid;
   width: 100%;
-    grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  justify-items: center;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -12,6 +13,9 @@
   padding: 1.25rem;
   border-radius: 20px;
   width: 100%;
+  max-width: 420px;
+    justify-content: center;
+  justify-items: center;
 }
 
 .chart-card h3 {
@@ -35,19 +39,21 @@
 @media (max-width: 1100px) {
   .methodology_charts {
     grid-template-columns: repeat(2, minmax(320px, 380px));
+    justify-content: center;
   }
 }
 
 @media (max-width: 800px) {
   .methodology_charts {
     grid-template-columns: 1fr;
-    justify-items: stretch;
+    justify-items: center;
   }
 }
 
 @media (max-width: 750px) {
   .methodology_charts {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 

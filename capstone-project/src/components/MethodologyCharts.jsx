@@ -137,6 +137,9 @@ export default function MethodologyCharts() {
           <PieChart
             margin={{
               top: 20,
+              right: 30,
+              bottom: 50,
+              left: 30,
             }}
           >
             <Pie
