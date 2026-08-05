@@ -133,7 +133,7 @@ export default function MethodologyCharts() {
       {/* Gender Pie Chart */}
       <Reveal className="methodology_chart-card">
         <h3>Gender Distribution</h3>
-        <ResponsiveContainer width={320} height={280}>
+        <ResponsiveContainer width={"100%"} height={280}>
           <PieChart
             margin={{
               top: 20,
@@ -195,7 +195,7 @@ export default function MethodologyCharts() {
       {/* Education Donut Chart */}
       <Reveal className="methodology_chart-card">
         <h3>Educational Background</h3>
-        <ResponsiveContainer width={390} height={320}>
+        <ResponsiveContainer width={"100%"} height={320}>
           <PieChart
             margin={{
               top: 20,
