@@ -62,7 +62,7 @@ function wrapText(text, maxChars = 6) {
   return lines;
 }
 
-function renderLabel({ cx, cy, midAngle, outerRadius, name }) {
+function renderLabel({ cx, cy, midAngle, outerRadius, name, isMobile }) {
   const RADIAN = Math.PI / 180;
   const radius = outerRadius + 15;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -80,7 +80,7 @@ function renderLabel({ cx, cy, midAngle, outerRadius, name }) {
       fill="var(--color-ink)"
       textAnchor={x > cx ? "start" : "end"}
       dominantBaseline="middle"
-      fontSize={12}
+      fontSize={isMobile ? 10 : 12}
     >
       {lines.map((line, index) => (
         <tspan key={index} x={labelX} dy={index === 0 ? 0 : "1.3em"}>
@@ -92,12 +92,15 @@ function renderLabel({ cx, cy, midAngle, outerRadius, name }) {
 }
 
 function renderEducationLabel(props) {
-  const { value } = props;
+  const { value, isMobile } = props;
   // Hide labels for very small categories
   if (value < 15) {
     return null;
   }
-  return renderLabel(props);
+  return renderLabel({
+    ...props,
+    isMobile,
+  });
 }
 
 // Percentage Tool tip (gender)
@@ -149,7 +152,12 @@ export default function MethodologyCharts() {
               cx="50%"
               cy="50%"
               outerRadius={90}
-              label={renderLabel}
+              label={(props) =>
+                renderLabel({
+                  ...props,
+                  isMobile,
+                })
+              }
             >
               {methodologyData.gender.map((entry, index) => (
                 <Cell
@@ -213,7 +221,12 @@ export default function MethodologyCharts() {
               innerRadius={50}
               outerRadius={90}
               paddingAngle={3}
-              label={renderEducationLabel}
+              label={(props) =>
+                renderEducationLabel({
+                  ...props,
+                  isMobile,
+                })
+              }
             >
               {methodologyData.education.map((entry, index) => (
                 <Cell

@@ -43,7 +43,7 @@ export const methodologyData = {
       value: 1,
     },
     {
-      name: "GED, or Equivalent",
+      name: "GED or Equivalent",
       value: 15,
     },
     {
