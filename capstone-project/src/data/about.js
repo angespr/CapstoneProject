@@ -42,15 +42,15 @@ export const about = {
     collection: {
       heading: "How Data Was Collected",
       details: [
-        "Qualitative: A semi-structured interviews were conducted with female-identifying participants only.",
-        "Quantitative: A survey was distributed to participants across multiple gender identities and age groups.",
+        "Qualitative: Semi-structured interviews were conducted in-person with female-identifying participants only at UW Bothell.",
+        "Quantitative: A survey was distributed to participants across multiple gender identities, age groups, and educational backgrounds.",
       ],
     },
 
     interviews: {
       heading: "Interview Data",
       paragraph:
-        "Interviews explored the experiences and decision-making processes behind cybersecurity behaviors, providing context beyond survey responsesL",
+        "Interviews explored the experiences and decision-making processes behind cybersecurity behaviors, providing context beyond survey responses.",
 
       details: [
         "20 female-identifying UWB students participated",
