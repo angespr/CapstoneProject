@@ -74,11 +74,37 @@ function renderLabel({ cx, cy, midAngle, outerRadius, name, isMobile }) {
 
   // Default positioning
   let labelX = x > cx ? x + labelOffset : x - labelOffset;
+  let labelY = y;
   let anchor = x > cx ? "start" : "end";
 
   // Manual adjustments
   if (name === "Associate Degree") {
-    labelX = x - 8; // move left
+    labelX = x - 6; 
+    labelY = y + 9;
+    anchor = "end";
+  }
+
+  if (name === "Bachelor's Degree") {
+    labelX = x - 8; 
+    labelY = y - 10;
+    anchor = "end";
+  }
+
+  if (name === "Some College") {
+    labelX = x + 35; 
+    labelY = y + 15;
+    anchor = "end";
+  }
+
+  if (name === "Law Degree or Professional Degree") {
+    labelX = x + 50; 
+    labelY = y - 18;
+    anchor = "end";
+  }
+
+  if (name === "GED or Equivalent") {
+    labelX = x + 25; 
+    labelY = y + 15;
     anchor = "end";
   }
 
@@ -87,7 +113,7 @@ function renderLabel({ cx, cy, midAngle, outerRadius, name, isMobile }) {
   return (
     <text
       x={labelX}
-      y={y}
+      y={labelY}
       fill="var(--color-ink)"
       textAnchor={anchor}
       dominantBaseline="middle"
@@ -109,9 +135,14 @@ function renderLabel({ cx, cy, midAngle, outerRadius, name, isMobile }) {
 function renderEducationLabel(props) {
   const { value, isMobile } = props;
   // Hide labels for very small categories
-  if (value < 15) {
+  if (value < 2) {
     return null;
   }
+
+  if (isMobile && value < 15) {
+    return null;
+  }
+
   return renderLabel({
     ...props,
     isMobile,

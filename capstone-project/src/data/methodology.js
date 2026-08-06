@@ -64,14 +64,14 @@ export const methodologyData = {
       name: "High School",
       value: 1,
     },
-
     {
-      name: "Law Degree, M.B.A. or Professional Degree",
-      value: 4,
-    },
-    {
-      name: "Doctorate Degree (PhD)",
+      name: "Doctorate (PhD)",
       value: 1,
     },
+    {
+      name: "Law Degree or Professional Degree",
+      value: 4,
+    },
+    
   ],
 };

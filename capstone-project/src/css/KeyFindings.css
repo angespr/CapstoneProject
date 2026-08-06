@@ -2,6 +2,8 @@
   background: var(--color-ink);
   color: var(--color-paper);
   padding: var(--space-6) var(--space-2);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .findings_inner {
@@ -132,9 +134,13 @@
   .findings {
     padding: var(--space-4) var(--space-1);
   }
+  .findings_inner {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
   .findings_heading h2 {
     font-size: 2rem;
-    text-align: center;
+    text-align: left;
   }
   .findings_intro {
     max-width: 100%;
