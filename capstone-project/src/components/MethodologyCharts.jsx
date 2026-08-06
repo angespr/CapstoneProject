@@ -22,6 +22,7 @@ const COLORS = [
   "var(--color-periwinkle-strong)",
   "var(--color-mint-strong)",
   "var(--color-periwinkle-dark)",
+  "var(--color-mint-strong)",
 ];
 
 function useIsMobile() {
@@ -64,26 +65,40 @@ function wrapText(text, maxChars = 6) {
 
 function renderLabel({ cx, cy, midAngle, outerRadius, name, isMobile }) {
   const RADIAN = Math.PI / 180;
-  const radius = outerRadius + 15;
+
+  const radius = outerRadius + 17;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-  // Distance away from the connector line from graph to label
-  const labelOffset = 12;
-  const labelX = x > cx ? x + labelOffset : x - labelOffset;
-  const lines = wrapText(name);
+  const labelOffset = isMobile ? 11 : 15;
+
+  // Default positioning
+  let labelX = x > cx ? x + labelOffset : x - labelOffset;
+  let anchor = x > cx ? "start" : "end";
+
+  // Manual adjustments
+  if (name === "Associate Degree") {
+    labelX = x - 8; // move left
+    anchor = "end";
+  }
+
+  const lines = wrapText(name, isMobile ? 10 : 6);
 
   return (
     <text
       x={labelX}
       y={y}
       fill="var(--color-ink)"
-      textAnchor={x > cx ? "start" : "end"}
+      textAnchor={anchor}
       dominantBaseline="middle"
       fontSize={isMobile ? 10 : 12}
     >
       {lines.map((line, index) => (
-        <tspan key={index} x={labelX} dy={index === 0 ? 0 : "1.3em"}>
+        <tspan
+          key={index}
+          x={labelX}
+          dy={index === 0 ? 0 : "1.3em"}
+        >
           {line}
         </tspan>
       ))}

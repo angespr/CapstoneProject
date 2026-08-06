@@ -39,9 +39,18 @@ export const methodologyData = {
 
   education: [
     {
-      name: "High School",
-      value: 1,
+      name: "Bachelor's Degree",
+      value: 201,
     },
+        {
+      name: "Master's Degree",
+      value: 84,
+    },
+        {
+      name: "Associate Degree",
+      value: 20,
+    },
+
     {
       name: "GED or Equivalent",
       value: 15,
@@ -50,18 +59,12 @@ export const methodologyData = {
       name: "Some College",
       value: 26,
     },
+
     {
-      name: "Associate Degree",
-      value: 20,
+      name: "High School",
+      value: 1,
     },
-    {
-      name: "Bachelor's Degree",
-      value: 201,
-    },
-    {
-      name: "Master's Degree",
-      value: 84,
-    },
+
     {
       name: "Law Degree, M.B.A. or Professional Degree",
       value: 4,
