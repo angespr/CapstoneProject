@@ -40,17 +40,17 @@ export const about = {
       "This research used a mixed-methods approach combining quantitative survey data and qualitative interviews to understand both cybersecurity behaviors and the experiences behind those decisions.",
 
     collection: {
-      heading: "How Data Was Collected",
+      heading: "How Overall Data Was Collected",
       details: [
-        "Qualitative: Semi-structured interviews were conducted in-person with female-identifying participants only at UW Bothell.",
+        "Qualitative: Semi-structured interviews were conducted in-person with female-identifying participants attending UW Bothell.",
         "Quantitative: A survey was distributed to participants across multiple gender identities, age groups, and educational backgrounds.",
       ],
     },
 
     interviews: {
-      heading: "Interview Data",
+      heading: "Why Interviews Were Conducted",
       paragraph:
-        "Interviews explored the experiences and decision-making processes behind cybersecurity behaviors, providing context beyond survey responses.",
+        "Interviews were a way to explore the experiences and decision-making processes behind cybersecurity behaviors, providing context beyond survey responses.",
 
       details: [
         "20 female-identifying UWB students participated",
